@@ -4,38 +4,55 @@
 #include "stdafx.h"
 #include <iostream>
 
-struct person {
-	char	sex;
-	int		age;
-	float	height;
-};
-
 enum sex {
 	M,
 	F
 };
 
-//person me;
-//person me = {'M', 24, 174.5};
+struct person {
+	sex		sex;
+	int		age;
+	float	height;
+};
 
-
-//me.age = 14;
 
 int main()
 {
 	//std::cout << me.sex << me.age << me.height << std::endl;
 	person me;
+
+	char inputSex;
 	std::cout << "Sex: M/F\t";
-	std::cin >> me.sex;
+	std::cin >> inputSex;
+	switch (inputSex)
+	{
+		case 'M'	: me.sex = M; break;
+		case 'm'	: me.sex = M; break;
+		case 'F'	: me.sex = F; break;
+		case 'f'	: me.sex = F; break;
+		default: "Dafuq!?"; break;
+	}
 
 	std::cout << "Age: [int]\t";
 	std::cin >> me.age;
 
 	std::cout << "height: [float]\t";
 	std::cin >> me.height;
-
-	std::cout << "Sex:\t"	<< me.sex		<< std::endl;
-	std::cout << "Age:\t"	<< me.age		<< std::endl;
+	
+	std::cout << "Sex:\t";
+	if (me.sex == M)
+	{
+		std::cout << "M (male)" << std::endl;
+	}
+	else if (me.sex == F)
+	{
+		std::cout << "F (female)" << std::endl;
+	}
+	else
+	{
+		std::cout << "The internets won't like you :|" << std::endl;
+	}
+	std::cout << "Age:\t"	<< me.age		<< std::endl;;
 	std::cout << "Height:\t"<< me.height	<< std::endl;
 
     return 0;
