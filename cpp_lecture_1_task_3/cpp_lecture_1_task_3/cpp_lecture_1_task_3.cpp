@@ -18,7 +18,6 @@ struct person {
 
 int main()
 {
-	//std::cout << me.sex << me.age << me.height << std::endl;
 	person me;
 
 	char inputSex;
@@ -30,7 +29,7 @@ int main()
 		case 'm'	: me.sex = M; break;
 		case 'F'	: me.sex = F; break;
 		case 'f'	: me.sex = F; break;
-		default: "Dafuq!?"; break;
+		default		: "Dafuq!?";  break;
 	}
 
 	std::cout << "Age: [int]\t";
