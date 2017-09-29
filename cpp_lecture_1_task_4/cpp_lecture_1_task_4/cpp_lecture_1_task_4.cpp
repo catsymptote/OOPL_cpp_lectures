@@ -21,4 +21,3 @@ int main()
 	std::cout << p << std::endl;	// Points to address of num
     return 0;
 }
-
